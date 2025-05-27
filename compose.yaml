@@ -1,0 +1,6 @@
+﻿services:
+  filestoreservice:
+    image: filestoreservice
+    build:
+      context: .
+      dockerfile: Dockerfile

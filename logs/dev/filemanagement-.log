@@ -1,0 +1,886 @@
+2025-05-27 15:03:44.906 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:03:45.412 +03:00 [ERR] Failed to migrate SQL Server database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Unable to determine the relationship represented by navigation 'FileMetadata.CustomMetadata' of type 'Dictionary<string, string>'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+2025-05-27 15:03:45.444 +03:00 [ERR] An error occurred while migrating the database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Unable to determine the relationship represented by navigation 'FileMetadata.CustomMetadata' of type 'Dictionary<string, string>'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateDatabaseAsync(IHost host) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 23
+2025-05-27 15:06:49.982 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:06:50.486 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:06:50.504 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:06:50.542 +03:00 [ERR] Failed to migrate SQL Server database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+2025-05-27 15:06:50.575 +03:00 [ERR] An error occurred while migrating the database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateDatabaseAsync(IHost host) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 23
+2025-05-27 15:08:07.546 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:08:08.138 +03:00 [ERR] Failed to migrate SQL Server database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Unable to determine the relationship represented by navigation 'FileMetadata.CustomMetadata' of type 'Dictionary<string, string>'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+2025-05-27 15:08:08.173 +03:00 [ERR] An error occurred while migrating the database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Unable to determine the relationship represented by navigation 'FileMetadata.CustomMetadata' of type 'Dictionary<string, string>'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateDatabaseAsync(IHost host) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 23
+2025-05-27 15:10:46.353 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:10:46.837 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:10:46.881 +03:00 [ERR] Failed to migrate SQL Server database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+2025-05-27 15:10:46.910 +03:00 [ERR] An error occurred while migrating the database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateDatabaseAsync(IHost host) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 23
+2025-05-27 15:11:26.574 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:11:27.062 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:11:27.079 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:11:27.111 +03:00 [ERR] Failed to migrate SQL Server database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+2025-05-27 15:11:27.141 +03:00 [ERR] An error occurred while migrating the database {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Cannot use table 'FileMetadata' for entity type 'FileMetadata' since it is being used for entity type 'FileMetadata' and potentially other entity types, but there is no linking relationship. Add a foreign key to 'FileMetadata' on the primary key properties and pointing to the primary key on another entity type mapped to 'FileMetadata'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedTableCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetMigrations(DatabaseFacade databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetPendingMigrationsAsync(DatabaseFacade databaseFacade, CancellationToken cancellationToken)
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateSqlServerAsync(IServiceProvider services, ILogger logger) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 46
+   at FileStoreService.Etc.DatabaseMigrationHelper.MigrateDatabaseAsync(IHost host) in C:\Users\tamir\RiderProjects\FileStoreService\src\Etc\DatabaseMigrationHelper.cs:line 23
+2025-05-27 15:13:29.187 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:29.664 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:29.681 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:32.220 +03:00 [INF] No pending SQL Server migrations found {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:32.224 +03:00 [INF] Initializing MongoDB... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:32.867 +03:00 [INF] MongoDB initialization completed successfully {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:32.878 +03:00 [INF] File Management API started on Development {"Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:32.981 +03:00 [WRN] The WebRootPath was not found: C:\Users\tamir\RiderProjects\FileStoreService\wwwroot. Static files may be unavailable. {"EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:33.019 +03:00 [INF] Now listening on: http://localhost:5000 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:33.022 +03:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:33.025 +03:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:33.027 +03:00 [INF] Content root path: C:\Users\tamir\RiderProjects\FileStoreService {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:44.267 +03:00 [INF] HTTP Request: GET /  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000001","RequestPath":"/","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"a2ed1424-78ef-45f2-9978-20b10aadcbcb","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:44.380 +03:00 [INF] HTTP Response: 404 - 115ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000001","RequestPath":"/","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"a2ed1424-78ef-45f2-9978-20b10aadcbcb","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:51.849 +03:00 [INF] HTTP Request: GET /swagger  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000002","RequestPath":"/swagger","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"fa44de55-b796-4262-8ccb-a8d8f0a9e484","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:51.861 +03:00 [INF] HTTP Response: 301 - 11ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000002","RequestPath":"/swagger","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"fa44de55-b796-4262-8ccb-a8d8f0a9e484","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:51.870 +03:00 [INF] HTTP Request: GET /swagger/index.html  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000003","RequestPath":"/swagger/index.html","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"5e4dab11-56ea-48aa-8603-a4c9402fc093","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.020 +03:00 [INF] HTTP Response: 200 - 149ms - Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+       
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="./swagger-ui-bundle.js" charset="utf-8"></script>
+    <script src="./swagger-ui-standalone-preset.js" charset="utf-8"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
+ {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000003","RequestPath":"/swagger/index.html","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"5e4dab11-56ea-48aa-8603-a4c9402fc093","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.048 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000004","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"14f6ef41-0641-45dc-9b76-a8e40f531b0c","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.050 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKG:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT2VMFRFKG","CorrelationId":"48fd3729-16a7-4735-8bfe-e93937474e88","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.050 +03:00 [INF] HTTP Request: GET /swagger/index.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKF:00000001","RequestPath":"/swagger/index.css","ConnectionId":"0HNCT2VMFRFKF","CorrelationId":"c4864fd2-cc85-4ee0-b8d8-1400b9ce489a","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.051 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKH:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT2VMFRFKH","CorrelationId":"d21d4ca7-a7c7-4ab8-9a9e-7722b213b798","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.051 +03:00 [INF] HTTP Request: GET /swagger/index.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKI:00000001","RequestPath":"/swagger/index.js","ConnectionId":"0HNCT2VMFRFKI","CorrelationId":"f3598b81-fc40-44b0-8ab0-7d125925d989","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.064 +03:00 [INF] HTTP Response: 200 - 16ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKE:00000004","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT2VMFRFKE","CorrelationId":"14f6ef41-0641-45dc-9b76-a8e40f531b0c","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.065 +03:00 [INF] HTTP Response: 200 - 14ms - Body: html {
+    box-sizing: border-box;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background: #fafafa;
+}
+ {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKF:00000001","RequestPath":"/swagger/index.css","ConnectionId":"0HNCT2VMFRFKF","CorrelationId":"c4864fd2-cc85-4ee0-b8d8-1400b9ce489a","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.071 +03:00 [INF] HTTP Response: 200 - 20ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKH:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT2VMFRFKH","CorrelationId":"d21d4ca7-a7c7-4ab8-9a9e-7722b213b798","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.075 +03:00 [INF] HTTP Response: 200 - 23ms - Body: /* Source: https://gist.github.com/lamberta/3768814
+ * Parse a string function definition and return a function object. Does not use eval.
+ * @param {string} str
+ * @return {function}
+ *
+ * Example:
+ *  var f = function (x, y) { return x * y; };
+ *  var g = parseFunction(f.toString());
+ *  g(33, 3); //=> 99
+ */
+function parseFunction(str) {
+    if (!str) return void (0);
+
+    var fn_body_idx = str.indexOf('{'),
+        fn_body = str.substring(fn_body_idx + 1, str.lastIndexOf('}')),
+        fn_declare = str.substring(0, fn_body_idx),
+        fn_params = fn_declare.substring(fn_declare.indexOf('(') + 1, fn_declare.lastIndexOf(')')),
+        args = fn_params.split(',');
+
+    args.push(fn_body);
+
+    function Fn() {
+        return Function.apply(this, args);
+    }
+    Fn.prototype = Function.prototype;
+
+    return new Fn();
+}
+
+window.onload = function () {
+    var configObject = JSON.parse('{"urls":[{"url":"/swagger/v1/swagger.json","name":"File Management API - Development v1"}],"deepLinking":false,"persistAuthorization":false,"displayOperationId":false,"defaultModelsExpandDepth":1,"defaultModelExpandDepth":1,"defaultModelRendering":"example","displayRequestDuration":true,"docExpansion":"none","showExtensions":false,"showCommonExtensions":false,"supportedSubmitMethods":["get","put","post","delete","options","head","patch","trace"],"tryItOutEnabled":true}');
+    var oauthConfigObject = JSON.parse('{"scopeSeparator":" ","scopes":[],"useBasicAuthenticationWithAccessCodeGrant":false,"usePkceWithAuthorizationCodeGrant":false}');
+
+    // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945
+    configObject.urls.forEach(function (item) {
+        if (item.url.startsWith("http") || item.url.startsWith("/")) return;
+        item.url = window.location.href.replace("index.html", item.url).split('#')[0];
+    });
+
+    // If validatorUrl is not explicitly provided, disable the feature by setting to null
+    if (!configObject.hasOwnProperty("validatorUrl"))
+        configObject.validatorUrl = null
+
+    // If oauth2RedirectUrl isn't specified, use the built-in default
+    if (!configObject.hasOwnProperty("oauth2RedirectUrl"))
+        configObject.oauth2RedirectUrl = (new URL("oauth2-redirect.html", window.location.href)).href;
+
+    // Apply mandatory parameters
+    configObject.dom_id = "#swagger-ui";
+    configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];
+    configObject.layout = "StandaloneLayout";
+
+    // Parse and add interceptor functions
+    var interceptors = JSON.parse('{}');
+    if (interceptors.RequestInterceptorFunction)
+        configObject.requestInterceptor = parseFunction(interceptors.RequestInterceptorFunction);
+    if (interceptors.ResponseInterceptorFunction)
+        configObject.responseInterceptor = parseFunction(interceptors.ResponseInterceptorFunction);
+
+    if (configObject.plugins) {
+        configObject.plugins = configObject.plugins.map(eval);
+    }
+    
+    // Begin Swagger UI call region
+
+    const ui = SwaggerUIBundle(configObject);
+
+    ui.initOAuth(oauthConfigObject);
+
+    // End Swagger UI call region
+
+    window.ui = ui
+}
+ {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKI:00000001","RequestPath":"/swagger/index.js","ConnectionId":"0HNCT2VMFRFKI","CorrelationId":"f3598b81-fc40-44b0-8ab0-7d125925d989","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.080 +03:00 [INF] HTTP Response: 200 - 29ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKG:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT2VMFRFKG","CorrelationId":"48fd3729-16a7-4735-8bfe-e93937474e88","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.081 +03:00 [ERR] Connection id "0HNCT2VMFRFKE", Request id "0HNCT2VMFRFKE:00000004": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKE:00000004","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:13:52.090 +03:00 [ERR] Connection id "0HNCT2VMFRFKH", Request id "0HNCT2VMFRFKH:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKH:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:13:52.100 +03:00 [ERR] Connection id "0HNCT2VMFRFKG", Request id "0HNCT2VMFRFKG:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKG:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:13:52.132 +03:00 [INF] HTTP Request: GET /swagger/favicon-32x32.png  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKG:00000002","RequestPath":"/swagger/favicon-32x32.png","ConnectionId":"0HNCT2VMFRFKG","CorrelationId":"6cb48ea3-25f3-401e-80ef-dd51ff77d404","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:13:52.137 +03:00 [INF] HTTP Response: 200 - 5ms - Body: �PNG
+
+   IHDR           D���   �PLTE   3D5F6F6F .:5F8E7F<E1@3D5F6F5F5E5F4F6F5F3G��-6G!GC��,3f?p�1/^@7k>Z�6~�.C�;w�/_�59o>n�2?x<s�0&OB,YABEe�4z�.��,H�:J�:I�:N�9xo��   tRNS ������� wĩF�S׽-�k�t  ~IDATxڅS�v�0%"�	kdŶ��w-I =��Lr��>�i�&�K����X9���|T!C�Y-�[�<�%�<Dk���f�I��%���G��_ gě�	7��	':{MK�J��U~���\�I�(X��9ƣ��q6�����TX��i�WiD�_�%�~��q^c+�յဪ�Ť�6�q�8L�����K0.�zb���PE�/@
+�8L�S%Ϡ���}�eAÅ�M_se��#!8�΃�k��	:��6!����!v:I��6&����L�`7�y&܍^ �e�W����V�~Vl�U`5�Lˣ�4*� ��x)k�ㆣ�AT������ʁg�_Z����>�ă	��� �.���0g���|�&����� ƌF{��g    IEND�B`� {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKG:00000002","RequestPath":"/swagger/favicon-32x32.png","ConnectionId":"0HNCT2VMFRFKG","CorrelationId":"6cb48ea3-25f3-401e-80ef-dd51ff77d404","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:51.420 +03:00 [INF] HTTP Request: GET /swagger/v1  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000001","RequestPath":"/swagger/v1","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"fba72747-1059-475f-8b48-f409e88cf435","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:51.426 +03:00 [INF] HTTP Response: 404 - 5ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000001","RequestPath":"/swagger/v1","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"fba72747-1059-475f-8b48-f409e88cf435","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:56.619 +03:00 [INF] HTTP Request: GET /swagger/v1/swagger.json  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000002","RequestPath":"/swagger/v1/swagger.json","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"6bac1c23-2fa9-430a-92e3-de603b422292","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:56.886 +03:00 [INF] HTTP Response: 200 - 266ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000002","RequestPath":"/swagger/v1/swagger.json","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"6bac1c23-2fa9-430a-92e3-de603b422292","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:56.920 +03:00 [INF] HTTP Request: GET /favicon.ico  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000003","RequestPath":"/favicon.ico","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"aedc0d57-6140-48f8-af1c-924b43b0f29d","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:16:56.925 +03:00 [INF] HTTP Response: 404 - 5ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000003","RequestPath":"/favicon.ico","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"aedc0d57-6140-48f8-af1c-924b43b0f29d","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.654 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000004","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"51d12a0b-29cf-4cc0-88ec-fff4b12861e0","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.658 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT2VMFRFKK","CorrelationId":"7bd8c42e-dc74-4caa-ab0a-1239478e62fa","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.658 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKL:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT2VMFRFKL","CorrelationId":"6a571060-f9b1-4488-85ae-a78e1dc99bd3","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.660 +03:00 [INF] HTTP Response: 200 - 5ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKJ:00000004","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT2VMFRFKJ","CorrelationId":"51d12a0b-29cf-4cc0-88ec-fff4b12861e0","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.666 +03:00 [INF] HTTP Response: 200 - 8ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT2VMFRFKK","CorrelationId":"7bd8c42e-dc74-4caa-ab0a-1239478e62fa","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.670 +03:00 [INF] HTTP Response: 200 - 11ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT2VMFRFKL:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT2VMFRFKL","CorrelationId":"6a571060-f9b1-4488-85ae-a78e1dc99bd3","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:01.674 +03:00 [ERR] Connection id "0HNCT2VMFRFKJ", Request id "0HNCT2VMFRFKJ:00000004": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKJ:00000004","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:17:01.679 +03:00 [ERR] Connection id "0HNCT2VMFRFKK", Request id "0HNCT2VMFRFKK:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:17:01.683 +03:00 [ERR] Connection id "0HNCT2VMFRFKL", Request id "0HNCT2VMFRFKL:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT2VMFRFKL:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:17:28.679 +03:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:33.136 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:33.626 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:33.643 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:33.927 +03:00 [INF] No pending SQL Server migrations found {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:33.931 +03:00 [INF] Initializing MongoDB... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.277 +03:00 [INF] MongoDB initialization completed successfully {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.285 +03:00 [INF] File Management API started on Development {"Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.332 +03:00 [WRN] The WebRootPath was not found: C:\Users\tamir\RiderProjects\FileStoreService\wwwroot. Static files may be unavailable. {"EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.358 +03:00 [INF] Now listening on: http://localhost:5000 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.361 +03:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.363 +03:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:34.365 +03:00 [INF] Content root path: C:\Users\tamir\RiderProjects\FileStoreService {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.757 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM550:00000001","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT31SLM550","CorrelationId":"4efe1d38-c67a-438b-b49c-f0db497142e1","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.757 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM552:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT31SLM552","CorrelationId":"80008d29-86e5-4316-ae6b-6ba7dc4ffc39","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.757 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM551:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT31SLM551","CorrelationId":"c7ee2867-3571-4770-830e-9548cfa1e8d0","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.825 +03:00 [INF] HTTP Response: 200 - 69ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM552:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT31SLM552","CorrelationId":"80008d29-86e5-4316-ae6b-6ba7dc4ffc39","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.825 +03:00 [INF] HTTP Response: 200 - 69ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM551:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT31SLM551","CorrelationId":"c7ee2867-3571-4770-830e-9548cfa1e8d0","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.825 +03:00 [INF] HTTP Response: 200 - 69ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT31SLM550:00000001","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT31SLM550","CorrelationId":"4efe1d38-c67a-438b-b49c-f0db497142e1","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:17:39.832 +03:00 [ERR] Connection id "0HNCT31SLM552", Request id "0HNCT31SLM552:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT31SLM552:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:17:39.834 +03:00 [ERR] Connection id "0HNCT31SLM551", Request id "0HNCT31SLM551:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT31SLM551:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:17:39.838 +03:00 [ERR] Connection id "0HNCT31SLM550", Request id "0HNCT31SLM550:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT31SLM550:00000001","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:18:07.782 +03:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:17.645 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:18.252 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:18.278 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:18.684 +03:00 [INF] No pending SQL Server migrations found {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:18.688 +03:00 [INF] Initializing MongoDB... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.106 +03:00 [INF] MongoDB initialization completed successfully {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.115 +03:00 [INF] File Management API started on Development {"Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.161 +03:00 [WRN] The WebRootPath was not found: C:\Users\tamir\RiderProjects\FileStoreService\wwwroot. Static files may be unavailable. {"EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.191 +03:00 [INF] Now listening on: http://localhost:5000 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.194 +03:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.197 +03:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:19.198 +03:00 [INF] Content root path: C:\Users\tamir\RiderProjects\FileStoreService {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.257 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEJ:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32AH5UEJ","CorrelationId":"76516c83-0a5c-405b-ba1a-bc19714826f5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.257 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEI:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32AH5UEI","CorrelationId":"8e0d12e7-48be-4fb7-ac28-8ddc61a57025","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.257 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEH:00000001","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32AH5UEH","CorrelationId":"a71c34fb-5554-456e-abe3-78fff925f75a","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.314 +03:00 [INF] HTTP Response: 200 - 59ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEH:00000001","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32AH5UEH","CorrelationId":"a71c34fb-5554-456e-abe3-78fff925f75a","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.314 +03:00 [INF] HTTP Response: 200 - 58ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEJ:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32AH5UEJ","CorrelationId":"76516c83-0a5c-405b-ba1a-bc19714826f5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.315 +03:00 [INF] HTTP Response: 200 - 60ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32AH5UEI:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32AH5UEI","CorrelationId":"8e0d12e7-48be-4fb7-ac28-8ddc61a57025","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:18:26.321 +03:00 [ERR] Connection id "0HNCT32AH5UEH", Request id "0HNCT32AH5UEH:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32AH5UEH:00000001","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:18:26.322 +03:00 [ERR] Connection id "0HNCT32AH5UEJ", Request id "0HNCT32AH5UEJ:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32AH5UEJ:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:18:26.325 +03:00 [ERR] Connection id "0HNCT32AH5UEI", Request id "0HNCT32AH5UEI:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32AH5UEI:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:18:56.481 +03:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:09.567 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.055 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.071 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.368 +03:00 [INF] No pending SQL Server migrations found {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.372 +03:00 [INF] Initializing MongoDB... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.722 +03:00 [INF] MongoDB initialization completed successfully {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.731 +03:00 [INF] File Management API started on Development {"Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.779 +03:00 [WRN] The WebRootPath was not found: C:\Users\tamir\RiderProjects\FileStoreService\wwwroot. Static files may be unavailable. {"EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.810 +03:00 [INF] Now listening on: http://localhost:5000 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.813 +03:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.815 +03:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:10.816 +03:00 [INF] Content root path: C:\Users\tamir\RiderProjects\FileStoreService {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:22.891 +03:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:31.980 +03:00 [INF] Starting SQL Server database migration... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:32.478 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:32.496 +03:00 [WRN] The property 'FileMetadata.CustomMetadata' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. {"EventId":{"Id":10620,"Name":"Microsoft.EntityFrameworkCore.Model.Validation.CollectionWithoutComparer"},"SourceContext":"Microsoft.EntityFrameworkCore.Model.Validation","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:32.819 +03:00 [INF] No pending SQL Server migrations found {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:32.823 +03:00 [INF] Initializing MongoDB... {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.195 +03:00 [INF] MongoDB initialization completed successfully {"SourceContext":"Program","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.203 +03:00 [INF] File Management API started on Development {"Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.247 +03:00 [WRN] The WebRootPath was not found: C:\Users\tamir\RiderProjects\FileStoreService\wwwroot. Static files may be unavailable. {"EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.274 +03:00 [INF] Now listening on: http://localhost:5000 {"EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.277 +03:00 [INF] Application started. Press Ctrl+C to shut down. {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.279 +03:00 [INF] Hosting environment: Development {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:33.281 +03:00 [INF] Content root path: C:\Users\tamir\RiderProjects\FileStoreService {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.040 +03:00 [INF] HTTP Request: GET /swagger/index.html  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000001","RequestPath":"/swagger/index.html","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"6b234216-5b58-4ea5-8881-9a6c035acf3d","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.194 +03:00 [INF] HTTP Response: 200 - 155ms - Body: <!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+       
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="./swagger-ui-bundle.js" charset="utf-8"></script>
+    <script src="./swagger-ui-standalone-preset.js" charset="utf-8"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
+ {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000001","RequestPath":"/swagger/index.html","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"6b234216-5b58-4ea5-8881-9a6c035acf3d","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.218 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32VAMLMK","CorrelationId":"c93b4f04-85c6-460c-941e-5ed26e118f93","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.218 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000002","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"fb0167ef-9704-45bf-b46c-1c8ec7a371e9","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.218 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLML:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32VAMLML","CorrelationId":"48904963-a0bb-4ee0-8a15-f1a3b045fc02","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.231 +03:00 [INF] HTTP Response: 200 - 12ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000002","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"fb0167ef-9704-45bf-b46c-1c8ec7a371e9","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.231 +03:00 [INF] HTTP Response: 200 - 12ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLML:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32VAMLML","CorrelationId":"48904963-a0bb-4ee0-8a15-f1a3b045fc02","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.232 +03:00 [INF] HTTP Response: 200 - 14ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32VAMLMK","CorrelationId":"c93b4f04-85c6-460c-941e-5ed26e118f93","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:19:36.235 +03:00 [ERR] Connection id "0HNCT32VAMLMJ", Request id "0HNCT32VAMLMJ:00000002": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLMJ:00000002","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:19:36.238 +03:00 [ERR] Connection id "0HNCT32VAMLML", Request id "0HNCT32VAMLML:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLML:00000001","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:19:36.241 +03:00 [ERR] Connection id "0HNCT32VAMLMK", Request id "0HNCT32VAMLMK:00000001": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLMK:00000001","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:20:08.556 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui.css  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMK:00000002","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32VAMLMK","CorrelationId":"85cacc0f-d4a2-4a30-9353-d40d63e19fa5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.557 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-bundle.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLML:00000002","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32VAMLML","CorrelationId":"bb159fdb-75c0-4148-80aa-9cbb06625018","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.558 +03:00 [INF] HTTP Request: GET /swagger/swagger-ui-standalone-preset.js  - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000003","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"ddb9df18-ce29-480c-bb2d-5891fa3ed7d5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.563 +03:00 [INF] HTTP Response: 200 - 7ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMK:00000002","RequestPath":"/swagger/swagger-ui.css","ConnectionId":"0HNCT32VAMLMK","CorrelationId":"85cacc0f-d4a2-4a30-9353-d40d63e19fa5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.569 +03:00 [INF] HTTP Response: 200 - 12ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLML:00000002","RequestPath":"/swagger/swagger-ui-bundle.js","ConnectionId":"0HNCT32VAMLML","CorrelationId":"bb159fdb-75c0-4148-80aa-9cbb06625018","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.575 +03:00 [INF] HTTP Response: 200 - 17ms - Body: [Empty or Large] {"SourceContext":"FileStoreService.Etc.Models.RequestResponseLoggingMiddleware","RequestId":"0HNCT32VAMLMJ:00000003","RequestPath":"/swagger/swagger-ui-standalone-preset.js","ConnectionId":"0HNCT32VAMLMJ","CorrelationId":"ddb9df18-ce29-480c-bb2d-5891fa3ed7d5","Application":"FileStoreService","Environment":"Development"}
+2025-05-27 15:20:08.580 +03:00 [ERR] Connection id "0HNCT32VAMLMK", Request id "0HNCT32VAMLMK:00000002": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLMK:00000002","RequestPath":"/swagger/swagger-ui.css","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 154949).
+2025-05-27 15:20:08.585 +03:00 [ERR] Connection id "0HNCT32VAMLML", Request id "0HNCT32VAMLML:00000002": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLML:00000002","RequestPath":"/swagger/swagger-ui-bundle.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 1484234).
+2025-05-27 15:20:08.590 +03:00 [ERR] Connection id "0HNCT32VAMLMJ", Request id "0HNCT32VAMLMJ:00000003": An unhandled exception was thrown by the application. {"EventId":{"Id":13,"Name":"ApplicationError"},"SourceContext":"Microsoft.AspNetCore.Server.Kestrel","RequestId":"0HNCT32VAMLMJ:00000003","RequestPath":"/swagger/swagger-ui-standalone-preset.js","Application":"FileStoreService","Environment":"Development"}
+System.InvalidOperationException: Response Content-Length mismatch: too few bytes written (0 of 229223).
+2025-05-27 15:21:59.709 +03:00 [INF] Application is shutting down... {"SourceContext":"Microsoft.Hosting.Lifetime","Application":"FileStoreService","Environment":"Development"}
