@@ -15,6 +15,7 @@ using FileStoreService.Features.Upload.Application.Services;
 using FileStoreService.Features.Validate.Application.Services;
 using FileStoreService.Shared.Constants;
 using Microsoft.AspNetCore.RateLimiting;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -227,17 +228,20 @@ if (swaggerSettings.EnableSwagger)
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(opts =>
     {
+        // Basic API Info with enhanced description
+        var assembly = Assembly.GetExecutingAssembly();
+        var version = assembly.GetName().Version?.ToString() ?? "1.0.0";
+        
         opts.SwaggerDoc("v1", new OpenApiInfo
         {
             Title = swaggerSettings.Title,
             Version = swaggerSettings.Version,
-            Description = swaggerSettings.Description,
-            Contact = new OpenApiContact
+            Description = $"## \ud83d\ude80 {swaggerSettings.Description}\n\n**Build Version:** `{version}`  \n**Environment:** `{builder.Environment.EnvironmentName}`  \n**Framework:** `.NET {Environment.Version}`\n\n### \ud83c\udfaf Key Features\n- **\ud83d\udce4 File Upload**: Single and bulk file uploads with comprehensive validation\n- **\ud83d\udce5 File Download**: Direct downloads with resume support and bulk archive creation  \n- **\ud83d\udd0d Advanced Search**: Full-text search with filters, faceting, and suggestions\n- **\ud83d\udd10 Security**: JWT-based authentication with role-based access control\n- **\u26a1 Rate Limiting**: Configurable protection against abuse\n- **\ud83d\udcca Monitoring**: Health checks, metrics, and comprehensive logging\n\n### \ud83d\udd11 Authentication\nThis API uses **JWT Bearer tokens**. Include your token in the Authorization header:\n```\nAuthorization: Bearer <your-jwt-token>\n```\n\n### \ud83d\udcc8 Rate Limits\n- **File Upload**: {rateLimitingSettings.FileUploadPolicy.PermitLimit} requests per minute\n- **Bulk Upload**: {rateLimitingSettings.BulkUploadPolicy.PermitLimit} requests per {rateLimitingSettings.BulkUploadPolicy.Window.TotalMinutes} minutes\n- **File Download**: {rateLimitingSettings.FileDownloadPolicy.PermitLimit} requests per minute  \n- **Search Operations**: {rateLimitingSettings.FileSearchPolicy.PermitLimit} requests per minute\n\n### \ud83d\udcde Support & Documentation.",
+            License = new OpenApiLicense
             {
-                Name = swaggerSettings.ContactName,
-                Email = swaggerSettings.ContactEmail,
-                Url = string.IsNullOrEmpty(swaggerSettings.ContactUrl) ? null : new Uri(swaggerSettings.ContactUrl)
-            }
+                Name = "MIT License",
+                Url = new Uri("https://opensource.org/licenses/MIT")
+            },
         });
 
         if (swaggerSettings.EnableJwtBearer)
@@ -274,8 +278,60 @@ if (swaggerSettings.EnableSwagger)
                 opts.IncludeXmlComments(xmlPath);
         }
 
-        opts.OperationFilter<FileUploadOperationFilter>();
-        opts.SchemaFilter<EnumSchemaFilter>();
+        // Add all custom filters with error handling
+        try
+        {
+            opts.OperationFilter<FileUploadOperationFilter>();
+            opts.OperationFilter<CorrelationIdOperationFilter>();
+            opts.OperationFilter<RateLimitingOperationFilter>();
+            opts.OperationFilter<AuthResponseOperationFilter>();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Failed to register some operation filters");
+        }
+        
+        try
+        {
+            opts.SchemaFilter<EnumSchemaFilter>();
+            opts.SchemaFilter<ExampleSchemaFilter>();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Failed to register some schema filters");
+        }
+
+        try
+        {
+            opts.DocumentFilter<SecurityRequirementsDocumentFilter>();
+            opts.DocumentFilter<TagOrderDocumentFilter>();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Failed to register some document filters");
+        }
+
+        // Configure serialization
+        opts.UseAllOfToExtendReferenceSchemas();
+        opts.UseOneOfForPolymorphism();
+
+        // Configure operation sorting and grouping
+        opts.OrderActionsBy(apiDesc =>
+            $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}_{apiDesc.RelativePath}");
+
+        if (builder.Environment.IsDevelopment())
+        {
+            opts.AddServer(new OpenApiServer
+            {
+                Url = "https://localhost:5001",
+                Description = "Development Server (HTTPS)"
+            });
+            opts.AddServer(new OpenApiServer
+            {
+                Url = "http://localhost:5000",
+                Description = "Development Server (HTTP)"
+            });
+        }
     });
 }
 
@@ -313,18 +369,144 @@ if (rateLimitingSettings.EnableRateLimiting)
 app.UseStaticFiles();
 app.UseRouting();
 
+// Enhanced Swagger UI Configuration
 if (swaggerSettings.EnableSwagger)
 {
-    app.UseSwagger();
+    app.UseSwagger(c =>
+    {
+        c.RouteTemplate = "swagger/{documentName}/swagger.json";
+        c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+        {
+            // Add runtime server information
+            swaggerDoc.Servers = new List<OpenApiServer>
+            {
+                new OpenApiServer 
+                { 
+                    Url = $"{httpReq.Scheme}://{httpReq.Host.Value}",
+                    Description = $"Current Server ({builder.Environment.EnvironmentName})"
+                }
+            };
+        });
+    });
+
     app.UseSwaggerUI(opts =>
     {
-        opts.SwaggerEndpoint("/swagger/v1/swagger.json", $"{swaggerSettings.Title} {swaggerSettings.Version}");
+        // Basic configuration
+        opts.SwaggerEndpoint("/swagger/v1/swagger.json", $"{swaggerSettings.Title} v1");
+        
+        // Enhanced UI settings
         opts.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
         opts.DisplayRequestDuration();
         opts.EnableTryItOutByDefault();
+        opts.EnableDeepLinking();
+        opts.EnableFilter();
+        opts.ShowExtensions();
+        opts.EnableValidator();
+        opts.SupportedSubmitMethods(
+            Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Get, 
+            Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Post, 
+            Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Put, 
+            Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod.Delete);
+        
+        // Try to inject custom files if they exist
+        var customCssPath = Path.Combine(builder.Environment.WebRootPath ?? "wwwroot", "swagger-ui", "custom.css");
+        var customJsPath = Path.Combine(builder.Environment.WebRootPath ?? "wwwroot", "swagger-ui", "custom.js");
+        
+        if (File.Exists(customCssPath))
+        {
+            opts.InjectStylesheet("/swagger-ui/custom.css");
+        }
+        
+        if (File.Exists(customJsPath))
+        {
+            opts.InjectJavascript("/swagger-ui/custom.js");
+        }
+        
+        // OAuth configuration (if needed)
+        opts.OAuthClientId("swagger-ui");
+        opts.OAuthAppName("File Management API");
+        opts.OAuthUseBasicAuthenticationWithAccessCodeGrant();
+        
+        // Custom HTML head content
+        opts.HeadContent = @"
+            <meta name='description' content='File Management API - Upload, download, and search files with enterprise features'>
+            <meta name='keywords' content='API, File Management, Upload, Download, Search, REST'>
+            <meta name='author' content='Development Team'>
+            <link rel='icon' type='image/png' href='/favicon.ico'>
+            <style>
+                .swagger-ui .topbar { min-height: 60px; }
+                body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+            </style>
+        ";
+        
+        // Route prefix
         opts.RoutePrefix = "swagger";
+        
+        // Enhanced configuration
+        opts.ConfigObject.AdditionalItems["tryItOutEnabled"] = true;
+        opts.ConfigObject.AdditionalItems["filter"] = true;
+        opts.ConfigObject.AdditionalItems["persistAuthorization"] = true;
+        opts.ConfigObject.AdditionalItems["displayOperationId"] = false;
+        opts.ConfigObject.AdditionalItems["defaultModelsExpandDepth"] = 2;
+        opts.ConfigObject.AdditionalItems["defaultModelExpandDepth"] = 3;
+        opts.ConfigObject.AdditionalItems["showRequestHeaders"] = true;
+        opts.ConfigObject.AdditionalItems["showCommonExtensions"] = true;
+        opts.ConfigObject.AdditionalItems["syntaxHighlight"] = new Dictionary<string, object>
+        {
+            ["activated"] = true,
+            ["theme"] = "agate"
+        };
     });
 }
+
+// Serve custom Swagger UI assets if they exist
+var swaggerUiPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "swagger-ui");
+if (Directory.Exists(swaggerUiPath))
+{
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(swaggerUiPath),
+        RequestPath = "/swagger-ui"
+    });
+}
+
+// Add API info endpoint
+app.MapGet("/api/info", () => new
+{
+    Title = swaggerSettings.Title,
+    Version = swaggerSettings.Version,
+    Environment = builder.Environment.EnvironmentName,
+    BuildDate = File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location),
+    Framework = $".NET {Environment.Version}",
+    Features = new[]
+    {
+        "JWT Authentication",
+        "Rate Limiting", 
+        "File Upload/Download",
+        "Advanced Search",
+        "Health Monitoring",
+        "Request Correlation",
+        "Comprehensive Logging"
+    },
+    Endpoints = new
+    {
+        Swagger = "/swagger",
+        Health = "/health",
+        Upload = "/api/v1/upload",
+        Download = "/api/v1/download", 
+        Search = "/api/v1/search"
+    },
+    RateLimits = new
+    {
+        Upload = $"{rateLimitingSettings.FileUploadPolicy.PermitLimit} per {rateLimitingSettings.FileUploadPolicy.Window.TotalMinutes}min",
+        BulkUpload = $"{rateLimitingSettings.BulkUploadPolicy.PermitLimit} per {rateLimitingSettings.BulkUploadPolicy.Window.TotalMinutes}min",
+        Download = $"{rateLimitingSettings.FileDownloadPolicy.PermitLimit} per {rateLimitingSettings.FileDownloadPolicy.Window.TotalMinutes}min",
+        Search = $"{rateLimitingSettings.FileSearchPolicy.PermitLimit} per {rateLimitingSettings.FileSearchPolicy.Window.TotalMinutes}min"
+    }
+})
+.WithName("GetApiInfo")
+.WithTags("Information")
+.Produces<object>(200);
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -9,6 +9,17 @@ public class RequestResponseLoggingMiddleware
     private readonly RequestDelegate _next;
     private readonly ILogger<RequestResponseLoggingMiddleware> _logger;
 
+    // Static file extensions and paths to exclude from logging
+    private static readonly HashSet<string> StaticFileExtensions = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".ico", ".svg", ".woff", ".woff2", ".ttf", ".eot"
+    };
+
+    private static readonly HashSet<string> ExcludedPaths = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "/swagger", "/health", "/favicon.ico"
+    };
+    
     public RequestResponseLoggingMiddleware(RequestDelegate next, ILogger<RequestResponseLoggingMiddleware> logger)
     {
         _next = next;
@@ -17,6 +28,13 @@ public class RequestResponseLoggingMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
+        // Skip logging for static files and certain paths
+        if (ShouldSkipLogging(context.Request.Path))
+        {
+            await _next(context);
+            return;
+        }
+        
         var stopwatch = Stopwatch.StartNew();
         
         // Log request
@@ -42,6 +60,22 @@ public class RequestResponseLoggingMiddleware
             // Copy the response back to the original stream
             await responseBody.CopyToAsync(originalResponseBodyStream);
         }
+    }
+    
+    private static bool ShouldSkipLogging(PathString path)
+    {
+        var pathValue = path.Value ?? string.Empty;
+
+        // Skip if path starts with excluded paths
+        if (ExcludedPaths.Any(excluded => pathValue.StartsWith(excluded, StringComparison.OrdinalIgnoreCase)))
+            return true;
+
+        // Skip if path has static file extension
+        var extension = Path.GetExtension(pathValue);
+        if (!string.IsNullOrEmpty(extension) && StaticFileExtensions.Contains(extension))
+            return true;
+
+        return false;
     }
 
     private async Task LogRequest(HttpContext context)
